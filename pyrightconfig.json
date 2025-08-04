@@ -1,0 +1,19 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.13",
+  "pythonPlatform": "Darwin",
+  "typeCheckingMode": "basic",
+  "include": [
+    "pyjsx",
+    "tests"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/.venv",
+    "examples"
+  ],
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "disableBytesTypePromotions": false
+}

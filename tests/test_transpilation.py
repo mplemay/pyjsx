@@ -160,25 +160,25 @@ def test_multiple_children(source, expected):
     <li>Third</li>
 </ul>""",
         """\
-def Header(props):
-    title = props["title"]
-    return <h1 data-x="123" style={{'font-size': '12px'}}>{title}</h1>
+    def Header(props):
+        title = props["title"]
+        return <h1 data-x="123" style={{'font-size': '12px'}}>{title}</h1>
 
 
-def Body(props):
-    return <div class="body">{props["children"]}</div>
+    def Body(props):
+        return <div class="body">{props["children"]}</div>
 
 
-def App():
-    return (
-        <Body>
-            some
-            text
-            <Header title="Home" />
-            more
-            text
-        </Body>
-    )""",
+    def App():
+        return (
+            <Body>
+                some
+                text
+                <Header title="Home"></Header>
+                more
+                text
+            </Body>
+        )""",
     ],
     ids=itertools.count(1),
 )

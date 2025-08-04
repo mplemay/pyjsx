@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol, TypeAlias
 
+from examples.hotwire.pyjsx_components.utils import dom_class, dom_id
 from pyjsx.elements import is_void_element
 from pyjsx.util import flatten, indent
 
@@ -113,6 +114,9 @@ class _JSX:
 
     def Fragment(self, *, children: list[JSX], **_: Any) -> list[JSX]:
         return children
+
+    dom_id = staticmethod(dom_id)
+    dom_class = staticmethod(dom_class)
 
 
 jsx = _JSX()

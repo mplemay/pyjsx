@@ -157,7 +157,7 @@ def test_multiline_strings(request, snapshot, source):
         'f"""test"""',
         "f'{1}'",
         'f"{1}+{1}={2}"',
-        'f"{f\"{1}\"}"',
+        'f"{f"{1}"}"',
         'f"""\nHello, {world}!\n"""',
         'f"Hello, {<b>world</b>}!"',
     ],

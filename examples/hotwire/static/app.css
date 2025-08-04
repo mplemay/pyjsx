@@ -1,0 +1,26 @@
+/* static/app.css */
+body {
+    font-family: sans-serif;
+    margin: 2em;
+    line-height: 1.5;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+.hidden {
+    display: none;
+}

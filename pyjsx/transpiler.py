@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from io import StringIO
 from typing import Any
 
-from pyjsx.elements import is_builtin_element
+from pyjsx.elements import is_builtin_element, is_void_element
 from pyjsx.tokenizer import Token, Tokenizer, TokenType
 
 
@@ -153,6 +153,9 @@ def parse_jsx_element(queue: TokenQueue) -> JSXElement:
     if not queue.peek_type(TokenType.JSX_CLOSE) and not queue.peek_type(TokenType.JSX_SLASH_CLOSE):
         attributes = parse_jsx_attributes(queue)
     if queue.peek_type(TokenType.JSX_SLASH_CLOSE):
+        if not is_void_element(name):
+            msg = f"Non-void element <{name}> cannot be self-closing"
+            raise ParseError(msg)
         queue.pop()
         return JSXElement(name, attributes, [])
 
